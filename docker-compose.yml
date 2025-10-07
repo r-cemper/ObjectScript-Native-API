@@ -1,19 +1,6 @@
 services:
   iris:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    restart: always
-    command: --check-caps false --ISCAgent false
-    ports:
-      - 41773:1972
-      - 42773:52773
-      - 53773
-    volumes:
-      - ./:/irisdev/app
-services:
-  iris:
-    image: intersystemsdc/iris-community:latest-preview-zpm
+    image: intersystemsdc/iris-community:latest
     restart: always
     command: -ISCAgent false -a /home/irisowner/dev/ascript.sh
 
