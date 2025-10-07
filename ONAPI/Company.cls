@@ -1,5 +1,5 @@
 /// This sample persistent class represents a company<br>
-Class rcc.ONAPI.Company Extends (%Persistent, %Populate, %XML.Adaptor, %JSON.Adaptor)
+Class ONAPI.Company Extends (%Persistent, %Populate, %XML.Adaptor, %JSON.Adaptor)
 {
 
 /// Define an index for <property>Name</property>.
@@ -52,11 +52,11 @@ Storage Default
 <Value>Revenue</Value>
 </Value>
 </Data>
-<DataLocation>^rcc.ONAPI.CompanyD</DataLocation>
+<DataLocation>^ONAPI.CompanyD</DataLocation>
 <DefaultData>CompanyDefaultData</DefaultData>
-<IdLocation>^rcc.ONAPI.CompanyD</IdLocation>
-<IndexLocation>^rcc.ONAPI.CompanyI</IndexLocation>
-<StreamLocation>^rcc.ONAPI.CompanyS</StreamLocation>
+<IdLocation>^ONAPI.CompanyD</IdLocation>
+<IndexLocation>^ONAPI.CompanyI</IndexLocation>
+<StreamLocation>^ONAPI.CompanyS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
 
