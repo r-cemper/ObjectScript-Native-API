@@ -26,9 +26,6 @@ To access IRIS System Management Portal
 http://localhost:42773/csp/sys/UtilHome.csp
 ```
 ### the Demo
-> Warning: Just use Docker for testing.    
-> The Version from IPM is outdated and has a bug.    
-    
 The demo is based on the raw class descriptions.  
 The data classes used are Address, Person, Employee, Company.  
 For a more attractive demo, a JSONtoString method by ID was added.  
