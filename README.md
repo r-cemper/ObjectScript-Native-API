@@ -6,7 +6,7 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 ### Installation
 Clone/git pull the repo into any local directory
 ```
-$ git clone https://github.com/rcemper/Native-API-for-ISOS.git
+git clone https://github.com/r-cemper/ObjectScript-Native-API.git
 ```
 To build and start the container run:
 ```
@@ -36,7 +36,7 @@ For a more attractive demo, a JSONtoString method by ID was added.
 Run from Terminal  
 ~~~
 zn "USER"
-USER>do ##class(rcc.ONAPI.demo).Run()
+USER>do ##class(ONAPI.demo).Run()
 Adjust Parameters
 host[127.0.0.1]:
 port[1972]:
