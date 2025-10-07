@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="native-api-objectscript.ZPM">
+  <Document name="objectscript-native-api.ZPM">
     <Module>
-      <Name>native-api-objectscript</Name>
-      <Version>1.0.7</Version>
+      <Name>objectscript-native-api</Name>
+      <Version>0.0.1</Version>
       <Description>Small demo how to use IRIS Native API between IRIS instances</Description>
       <Keywords>Terminal, Native API</Keywords>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-       <Resource Name="rcc.PKG"/>
+       <Resource Name="ONAPI.PKG"/>
     </Module>
   </Document>
 </Export>
