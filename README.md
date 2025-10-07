@@ -10,11 +10,11 @@ git clone https://github.com/r-cemper/ObjectScript-Native-API.git
 ```
 To build and start the container run:
 ```
-$ docker compose up -d && docker compose logs -f
+docker compose up -d && docker compose logs -f
 ```
 To open IRIS Terminal do:
 ```
-$ docker-compose exec iris iris session iris
+docker-compose exec iris iris session iris
 USER>
 ```
 or using **Iterm**
