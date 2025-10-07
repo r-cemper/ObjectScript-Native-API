@@ -1,5 +1,5 @@
 /// This sample persistent class represents an employee.<br>
-Class rcc.ONAPI.Employee Extends Person
+Class ONAPI.Employee Extends Person
 {
 
 /// The employee's job title.
