@@ -1,5 +1,5 @@
 /// show basic operation of IRIS Native API for ObjectScript
-Class rcc.ONAPI.demo Extends %RegisteredObject
+Class ONAPI.demo Extends %RegisteredObject
 {
 
 Property host As %String(MAXLEN = "") [ InitialExpression = "127.0.0.1" ];
@@ -45,7 +45,7 @@ Method Init() As %Status
 
 ClassMethod Run()
 {
-	set DB=##class(rcc.ONAPI.demo).%New()
+	set DB=##class(ONAPI.demo).%New()
 		,go=1
 	while go { do DB.Menu(.go) }
 	set DB.iris=""
@@ -59,23 +59,23 @@ ClassMethod Run()
 Method Menu(ByRef go As %Boolean = 1)
 {
 	read "Populate Person by:",pop,!
-	if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Person","Populate",pop),!
+	if pop write ?5,..iris.ClassMethodValue("ONAPI.Person","Populate",pop),!
 	read "Populate Company by:",pop,!
-	if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Company","Populate",pop),!
+	if pop write ?5,..iris.ClassMethodValue("ONAPI.Company","Populate",pop),!
 	read "Populate Employee by:",pop,!
-	if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Employee","Populate",pop),!
+	if pop write ?5,..iris.ClassMethodValue("ONAPI.Employee","Populate",pop),!
 	read "Show Person by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Person","JSON",pop),!
+    if pop write ?5,..iris.ClassMethodValue("ONAPI.Person","JSON",pop),!
 	read "Show Company by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Company","JSON",pop),!
+    if pop write ?5,..iris.ClassMethodValue("ONAPI.Company","JSON",pop),!
 	read "Show Employee by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("rcc.ONAPI.Employee","JSON",pop),!
+    if pop write ?5,..iris.ClassMethodValue("ONAPI.Employee","JSON",pop),!
     read "Show Global PersonD by ID:",pop,!
     if $l(pop) {
-	    set d=..iris.IsDefined("rcc.ONAPI.PersonD",$s(pop:pop,1:""))
+	    set d=..iris.IsDefined("ONAPI.PersonD",$s(pop:pop,1:""))
 	    write ?5,"$Data()=",d,!
 	    if d#10 {
-		    set Value=..iris.Get("rcc.ONAPI.PersonD",pop)
+		    set Value=..iris.Get("ONAPI.PersonD",pop)
 		    write ?5 zwrite Value  
     		}
 		}
@@ -83,7 +83,7 @@ Method Menu(ByRef go As %Boolean = 1)
 	if $l(pop),"Yy"[$e(pop) {
 		set idx=""
 		for  { 
-			set idx=..iris.GetNext(1,,,"rcc.ONAPI.PersonI",idx)
+			set idx=..iris.GetNext(1,,,"ONAPI.PersonI",idx)
 			if $l(idx) write ?5,idx,!
 			else  quit	
 			} 
