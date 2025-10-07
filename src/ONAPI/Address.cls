@@ -1,5 +1,5 @@
 /// This is a sample embeddable class representing an address.
-Class rcc.ONAPI.Address Extends (%SerialObject, %Populate, %XML.Adaptor, %JSON.Adaptor)
+Class ONAPI.Address Extends (%SerialObject, %Populate, %XML.Adaptor, %JSON.Adaptor)
 {
 
 /// The street address.
@@ -31,7 +31,7 @@ Storage Default
 </Value>
 </Data>
 <State>AddressState</State>
-<StreamLocation>^rcc.ONAPI.AddressS</StreamLocation>
+<StreamLocation>^ONAPI.AddressS</StreamLocation>
 <Type>%Storage.Serial</Type>
 }
 
