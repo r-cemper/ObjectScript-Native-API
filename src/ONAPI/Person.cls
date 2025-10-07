@@ -1,5 +1,5 @@
 /// This sample persistent class represents a person.
-Class rcc.ONAPI.Person Extends (%Persistent, %Populate, %XML.Adaptor, %JSON.Adaptor)
+Class ONAPI.Person Extends (%Persistent, %Populate, %XML.Adaptor, %JSON.Adaptor)
 {
 
 /// Define a unique index for <property>SSN</property>.
@@ -76,11 +76,11 @@ Storage Default
 <Value>FavoriteColors</Value>
 </Value>
 </Data>
-<DataLocation>^rcc.ONAPI.PersonD</DataLocation>
+<DataLocation>^ONAPI.PersonD</DataLocation>
 <DefaultData>PersonDefaultData</DefaultData>
-<IdLocation>^rcc.ONAPI.PersonD</IdLocation>
-<IndexLocation>^rcc.ONAPI.PersonI</IndexLocation>
-<StreamLocation>^rcc.ONAPI.PersonS</StreamLocation>
+<IdLocation>^ONAPI.PersonD</IdLocation>
+<IndexLocation>^ONAPI.PersonI</IndexLocation>
+<StreamLocation>^ONAPI.PersonS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
 
