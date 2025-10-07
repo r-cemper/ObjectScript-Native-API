@@ -11,3 +11,14 @@ services:
       - 53773
     volumes:
       - ./:/irisdev/app
+services:
+  iris:
+    image: intersystemsdc/iris-community:latest-preview-zpm
+    restart: always
+    command: -ISCAgent false -a /home/irisowner/dev/ascript.sh
+
+    ports: 
+      - 41773:1972
+      - 42773:52773
+    volumes:
+      - ./:/home/irisowner/dev
