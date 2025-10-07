@@ -1,4 +1,4 @@
-xtservices:
+services:
   iris:
     image: intersystemsdc/iris-community:latest
     restart: always
