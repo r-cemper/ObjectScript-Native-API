@@ -42,7 +42,6 @@ Method Init() As %Status
 	write "****** connected ********",!	
 	quit $$$OK
 }
-
 ClassMethod Run()
 {
 	set DB=##class(ONAPI.demo).%New()
@@ -58,19 +57,19 @@ ClassMethod Run()
 /// list of prepared tests	
 Method Menu(ByRef go As %Boolean = 1)
 {
-	read "Populate Person by:",pop,!
-	if pop write ?5,..iris.ClassMethodValue("ONAPI.Person","Populate",pop),!
-	read "Populate Company by:",pop,!
-	if pop write ?5,..iris.ClassMethodValue("ONAPI.Company","Populate",pop),!
-	read "Populate Employee by:",pop,!
+	read !,"Populate Person by:",pop,!
+	if pop write ?5,..iris.ClassMethodValue("ONAPI.Person","Populate",pop)
+	read !,"Populate Company by:",pop,!
+	if pop write ?5,..iris.ClassMethodValue("ONAPI.Company","Populate",pop)
+	read !,"Populate Employee by:",pop,!
 	if pop write ?5,..iris.ClassMethodValue("ONAPI.Employee","Populate",pop),!
-	read "Show Person by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("ONAPI.Person","JSON",pop),!
-	read "Show Company by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("ONAPI.Company","JSON",pop),!
-	read "Show Employee by ID:",pop,!
-    if pop write ?5,..iris.ClassMethodValue("ONAPI.Employee","JSON",pop),!
-    read "Show Global PersonD by ID:",pop,!
+	read !,"Show Person by ID:",pop,!
+    if pop do jsn(..iris.ClassMethodValue("ONAPI.Person","JSON",pop)) 
+	read !,"Show Company by ID:",pop,!
+    if pop do jsn(..iris.ClassMethodValue("ONAPI.Company","JSON",pop))
+	read !,"Show Employee by ID:",pop,!    
+    if pop do jsn(..iris.ClassMethodValue("ONAPI.Employee","JSON",pop))
+    read !,"Show Global PersonD by ID:",pop,!
     if $l(pop) {
 	    set d=..iris.IsDefined("ONAPI.PersonD",$s(pop:pop,1:""))
 	    write ?5,"$Data()=",d,!
@@ -91,7 +90,9 @@ Method Menu(ByRef go As %Boolean = 1)
 	read "Exit Demo (n,y,*):",pop,!		
 	if $l(pop),"*Yy"[$e(pop) set go=0
 	quit
+jsn(jsn) 
+	if $e(jsn)="{" write $$Do^ZPretty(jsn)
+	else  write "<UNDEFINED>" 
+	quit
 }
-
 }
-
